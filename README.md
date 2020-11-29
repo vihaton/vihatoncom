@@ -4,8 +4,14 @@
 
 ## TODO
 
+### Client
+- migrate to ts
+- first working exmaple
 - dockerfile for prod
 - reconfigure nginx
+
+### Server 
+- init
 
 ## Dev notes
 
