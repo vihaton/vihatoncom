@@ -1,7 +1,12 @@
-import Container from '@material-ui/core/Container'
+import React, { Fragment, Suspense, lazy } from "react";
 
-import React, { useRef, useEffect } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
+import theme from "./theme";
+import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Pace from "./components/Pace";
+
+
 // import AppRoute from './utils/AppRoute';
 // import ScrollReveal from './utils/ScrollReveal';
 // import ReactGA from 'react-ga';
@@ -22,16 +27,16 @@ import { useLocation, Switch } from 'react-router-dom';
 
 const App = () => {
 
-  const childRef = useRef();
-  let location = useLocation();
+  // const childRef = useRef();
+  // let location = useLocation();
 
-  useEffect(() => {
-    const page = location.pathname;
-    document.body.classList.add('is-loaded')
-    // childRef.current.init();
-    // trackPage(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+  // useEffect(() => {
+  //   const page = location.pathname;
+  //   document.body.classList.add('is-loaded')
+  //   // childRef.current.init();
+  //   // trackPage(page);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [location]);
 
   return (
     // <ScrollReveal
@@ -41,13 +46,24 @@ const App = () => {
     //       <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
     //     </Switch>
     //   )} />
-    <Container>
-        <div>
-          <p>
-            This is a test.
-          </p>
-        </div>
-    </Container>
+    <BrowserRouter>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <Pace color={theme.palette.primary.light} />
+        <Suspense fallback={<Fragment />}>
+          <Switch>
+            <Route path="/admin">
+              <p>Admin view.</p>
+            </Route>
+            <Route >
+              <p>Normal view.</p>
+            </Route>
+          </Switch>
+        </Suspense>
+
+      </MuiThemeProvider>
+    </BrowserRouter>
+
   )
 }
 
