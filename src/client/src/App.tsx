@@ -5,6 +5,7 @@ import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 
 import Pace from "./components/Pace";
+import AdminView from './components/AdminView'
 
 
 // import AppRoute from './utils/AppRoute';
@@ -52,7 +53,7 @@ const App = () => {
       <Suspense fallback={<Fragment />}>
         <Switch>
           <Route path="/admin">
-            <p>Admin view.</p>
+            <AdminView/>
           </Route>
           <Route >
             <p>Normal view.</p>
