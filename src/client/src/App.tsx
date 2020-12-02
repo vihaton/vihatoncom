@@ -2,7 +2,7 @@ import React, { Fragment, Suspense, lazy } from "react";
 
 import theme from "./theme";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Pace from "./components/Pace";
 
@@ -46,23 +46,21 @@ const App = () => {
     //       <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
     //     </Switch>
     //   )} />
-    <BrowserRouter>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <Pace color={theme.palette.primary.light} />
-        <Suspense fallback={<Fragment />}>
-          <Switch>
-            <Route path="/admin">
-              <p>Admin view.</p>
-            </Route>
-            <Route >
-              <p>Normal view.</p>
-            </Route>
-          </Switch>
-        </Suspense>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Pace color={theme.palette.primary.light} />
+      <Suspense fallback={<Fragment />}>
+        <Switch>
+          <Route path="/admin">
+            <p>Admin view.</p>
+          </Route>
+          <Route >
+            <p>Normal view.</p>
+          </Route>
+        </Switch>
+      </Suspense>
 
-      </MuiThemeProvider>
-    </BrowserRouter>
+    </MuiThemeProvider>
 
   )
 }

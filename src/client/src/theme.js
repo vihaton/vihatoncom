@@ -1,18 +1,18 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
 
-// #FBE8A6 // desert
-// #F4976C // orange
-// #303C6C // violet blue
-// #B4DFE5 // river stone
-// #D2FDFF // ice blue
+const desert = '#FBE8A6' // desert
+const orange = '#F4976C' // orange
+const violetBlue = '#303C6C' // violet blue
+const riverStone = '#B4DFE5' // river stone
+const iceBlue = '#D2FDFF' // ice blue
 
 // colors
-const primary = "#303C6C";
-const secondary = "#F4976C";
+const primary = orange;
+const secondary = violetBlue;
 const black = "#343a40";
 const darkBlack = "rgb(36, 40, 44)";
-const background = "#D2FDFF";
+const background = iceBlue;
 const warningLight = "rgba(253, 200, 69, .3)";
 const warningMain = "rgba(253, 200, 69, .5)";
 const warningDark = "rgba(253, 200, 69, .7)";
