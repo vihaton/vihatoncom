@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Pace from "./components/Pace";
 import AdminView from './components/AdminView'
+import Landing from "./components/Landing";
 
 
 // import AppRoute from './utils/AppRoute';
@@ -53,10 +54,10 @@ const App = () => {
       <Suspense fallback={<Fragment />}>
         <Switch>
           <Route path="/admin">
-            <AdminView/>
+            <AdminView />
           </Route>
           <Route >
-            <p>Normal view.</p>
+            <Landing />
           </Route>
         </Switch>
       </Suspense>
