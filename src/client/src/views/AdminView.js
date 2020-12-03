@@ -7,7 +7,7 @@ const AdminView = () => {
   return (
     <>
       <div>
-    </div>
+      </div>
       <ParticlesBg type='cobweb' num={70} bg={true} />
     </>
   )

@@ -1,12 +1,13 @@
-import React, { Fragment, Suspense, lazy } from "react";
+import React, { Fragment, Suspense } from "react";
 
 import theme from "./theme";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
+
 import { Route, Switch } from "react-router-dom";
 
 import Pace from "./components/Pace";
-import AdminView from './components/AdminView'
-import Landing from "./components/Landing";
+import AdminView from './views/AdminView'
+import Landing from "./views/Landing";
 
 
 // import AppRoute from './utils/AppRoute';

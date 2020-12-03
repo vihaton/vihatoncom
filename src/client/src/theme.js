@@ -44,6 +44,7 @@ const theme = createMuiTheme({
       main: warningMain,
       dark: warningDark
     },
+    link: riverStone,
     // Used to shift a color's luminance by approximately
     // two indexes within its tonal palette.
     // E.g., shift from Red 500 to Red 300 or Red 700.
