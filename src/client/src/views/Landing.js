@@ -1,34 +1,35 @@
-import Container from '@material-ui/core/Container';
-import React from 'react'
-import StickyFooter from '../components/StickyFooter';
-import { makeStyles } from '@material-ui/core/styles';
-import { LoremIpsum } from 'react-lorem-ipsum'
-import { Typography } from '@material-ui/core';
+import Container from "@material-ui/core/Container";
+import React from "react";
+import { LoremIpsum } from "react-lorem-ipsum";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
+
+import Header from "../components/Header";
+import StickyFooter from "../components/StickyFooter";
+import Greeting from "../components/Greeting";
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-    justifyContent: 'space-between'
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh",
+    justifyContent: "space-between",
   },
-}))
+}));
 
 const Landing = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
-    <Container className={classes.main} maxWidth='md'>
+    <div className={classes.main}>
+      <Header />
+      <Greeting />
+      <Container className={classes.main} maxWidth="md">
+        <LoremIpsum p={4} />
+        <StickyFooter />
+      </Container>
+    </div>
+  );
+};
 
-      {/* <Header /> */}
-
-      <Typography variant='h2' >
-        {'Vili Hätönen'}
-      </Typography>
-      <LoremIpsum p={4} />
-      <StickyFooter />
-    </Container>
-  )
-}
-
-export default Landing
+export default Landing;

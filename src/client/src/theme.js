@@ -1,11 +1,10 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
-
-const desert = '#FBE8A6' // desert
-const orange = '#F4976C' // orange
-const violetBlue = '#303C6C' // violet blue
-const riverStone = '#B4DFE5' // river stone
-const iceBlue = '#D2FDFF' // ice blue
+const desert = "#FBE8A6"; // desert
+const orange = "#F4976C"; // orange
+const violetBlue = "#303C6C"; // violet blue
+const riverStone = "#B4DFE5"; // river stone
+const iceBlue = "#D2FDFF"; // ice blue
 
 // colors
 const primary = orange;
@@ -37,12 +36,12 @@ const theme = createMuiTheme({
     secondary: { main: secondary },
     common: {
       black,
-      darkBlack
+      darkBlack,
     },
     warning: {
       light: warningLight,
       main: warningMain,
-      dark: warningDark
+      dark: warningDark,
     },
     link: riverStone,
     // Used to shift a color's luminance by approximately
@@ -50,9 +49,9 @@ const theme = createMuiTheme({
     // E.g., shift from Red 500 to Red 300 or Red 700.
     tonalOffset: 0.2,
     background: {
-      default: background
+      default: background,
     },
-    spacing
+    spacing,
   },
   breakpoints: {
     // Define custom breakpoint values.
@@ -65,18 +64,24 @@ const theme = createMuiTheme({
       lg,
       md,
       sm,
-      xs
-    }
+      xs,
+    },
   },
   border: {
     borderColor: borderColor,
-    borderWidth: borderWidth
+    borderWidth: borderWidth,
   },
   overrides: {
     MuiExpansionPanel: {
       root: {
-        position: "static"
-      }
+        position: "static",
+      },
+    },
+    MuiCard: {
+      root: {
+        backgroundColor: desert,
+        maxWidth: "90vw",
+      },
     },
     MuiTableCell: {
       root: {
@@ -85,51 +90,58 @@ const theme = createMuiTheme({
         borderBottom: `${borderWidth}px solid ${borderColor}`,
         [`@media (max-width:  ${sm}px)`]: {
           paddingLeft: spacing,
-          paddingRight: spacing
-        }
-      }
+          paddingRight: spacing,
+        },
+      },
     },
     MuiDivider: {
       root: {
         backgroundColor: borderColor,
-        height: borderWidth
-      }
+        height: borderWidth,
+      },
     },
     MuiPrivateNotchedOutline: {
       root: {
-        borderWidth: borderWidth
-      }
+        borderWidth: borderWidth,
+      },
     },
     MuiListItem: {
       divider: {
-        borderBottom: `${borderWidth}px solid ${borderColor}`
-      }
+        borderBottom: `${borderWidth}px solid ${borderColor}`,
+      },
     },
     MuiDialog: {
       paper: {
         width: "100%",
         maxWidth: 430,
         marginLeft: spacing,
-        marginRight: spacing
-      }
+        marginRight: spacing,
+      },
     },
     MuiTooltip: {
       tooltip: {
-        backgroundColor: darkBlack
-      }
+        backgroundColor: darkBlack,
+      },
     },
     MuiExpansionPanelDetails: {
       root: {
         [`@media (max-width:  ${sm}px)`]: {
           paddingLeft: spacing,
-          paddingRight: spacing
-        }
-      }
-    }
+          paddingRight: spacing,
+        },
+      },
+    },
   },
   typography: {
-    useNextVariants: true
-  }
+    useNextVariants: true,
+    // fontSize: "0.7rem",
+    // "@media (min-width:400px)": {
+    //   fontSize: "1rem",
+    // },
+    // "@media (min-width:600px)": {
+    //   fontSize: "1.5rem",
+    // },
+  },
 });
 
 export default responsiveFontSizes(theme);
