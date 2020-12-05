@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "4vh",
   },
   greetingText: {
+    "@media (max-width:400px)": {
+      fontSize: "0.5rem",
+    },
     "@media (min-width:600px)": {
       fontSize: "1.5rem",
     },

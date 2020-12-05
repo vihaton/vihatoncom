@@ -134,13 +134,6 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    // fontSize: "0.7rem",
-    // "@media (min-width:400px)": {
-    //   fontSize: "1rem",
-    // },
-    // "@media (min-width:600px)": {
-    //   fontSize: "1.5rem",
-    // },
   },
 });
 
