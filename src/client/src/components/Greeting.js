@@ -37,17 +37,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const image = {
+  title: "Vili speaking into a microphone with glitter on his face.",
+  src: glitterViliImg,
+};
+
 export default function Greeting() {
   const classes = useStyles();
 
   return (
     <Fade bottom duration={1000} distance="1em">
       <div className={classes.root}>
-        <img
-          className={classes.image}
-          alt="Vili speaking into a microphone with glitter on his face."
-          src={glitterViliImg} //"../assets/images/glitter-vili.jpg"
-        />
+        <img className={classes.image} alt={image.title} src={image.src} />
         <div className={classes.greeting}>
           <div className={classes.greetingText}>
             <h1> Vili Hätönen</h1>
