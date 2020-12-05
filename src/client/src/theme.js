@@ -11,6 +11,7 @@ const primary = orange;
 const secondary = violetBlue;
 const black = "#343a40";
 const darkBlack = "rgb(36, 40, 44)";
+const darkGrey = "rgba(179,179,179,0.3)";
 const background = iceBlue;
 const warningLight = "rgba(253, 200, 69, .3)";
 const warningMain = "rgba(253, 200, 69, .5)";
@@ -37,6 +38,7 @@ const theme = createMuiTheme({
     common: {
       black,
       darkBlack,
+      darkGrey,
     },
     warning: {
       light: warningLight,

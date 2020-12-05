@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Headroom from "react-headroom";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(2),
   },
+  link: {
+    color: theme.palette.common.darkBlack,
+    textDecoration: "none",
+    "a:hover": {
+      backgroundColor: theme.palette.common.darkGrey,
+    },
+  },
 }));
 
 const Header = () => {
@@ -25,7 +34,16 @@ const Header = () => {
   return (
     <Headroom className={classes.root}>
       <div className={classes.main}>
-        <p>vihaton.com</p>
+        <Grid container justify="space-between">
+          <Grid item>
+            <p>vihaton.com</p>
+          </Grid>
+          {/* <Grid item>
+            <a className={classes.link} href="#public-speaking">
+              public speaking
+            </a>
+          </Grid> */}
+        </Grid>
       </div>
     </Headroom>
   );
