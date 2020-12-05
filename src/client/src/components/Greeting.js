@@ -41,7 +41,7 @@ export default function Greeting() {
   const classes = useStyles();
 
   return (
-    <Fade bottom duration={500} distance="1em">
+    <Fade bottom duration={1000} distance="1em">
       <div className={classes.root}>
         <img
           className={classes.image}
