@@ -6,7 +6,7 @@ import {
   SectionTextProps,
   SectionImageProps,
 } from "../../models/Models";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,8 +22,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    maxWidth: "35vw",
     minWidth: "200px",
   },
 }));
@@ -31,15 +33,13 @@ const useStyles = makeStyles((theme) => ({
 const SectionText = ({ title, content }: SectionTextProps) => {
   const classes = useStyles();
   return (
-    <Grid
-      container
-      justify={"center"}
-      direction={"column"}
+    <Container
       className={classes.text}
+      maxWidth="sm"
     >
       <Typography variant="h2">{title}</Typography>
       <Typography variant={"body1"}>{content}</Typography>
-    </Grid>
+    </Container>
   );
 };
 
