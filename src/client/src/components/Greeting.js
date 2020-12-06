@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.5rem",
     },
     background: "rgba(0, 0, 0, 0.3)",
-    // background: theme.palette.primary.light,
     padding: "1em 3em 1em 2em",
     minWidth: "25vw",
     maxHeight: "50vh",

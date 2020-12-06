@@ -11,19 +11,19 @@ import { Skeleton } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    padding: "1rem",
-    // justifyContent: "space-around",
+    padding: theme.spacing(2),
   },
   image: {
     minHeight: "100px",
     minWidth: "200px",
-    // alignItems: "stretch",
     maxWidth: "90vw",
     "@media (min-width:600px)": {
       maxWidth: "50vw",
     },
   },
   text: {
+    alignItems: "center",
+    maxWidth: "35vw",
     minWidth: "200px",
   },
 }));
@@ -31,7 +31,12 @@ const useStyles = makeStyles((theme) => ({
 const SectionText = ({ title, content }: SectionTextProps) => {
   const classes = useStyles();
   return (
-    <Grid item className={classes.text}>
+    <Grid
+      container
+      justify={"center"}
+      direction={"column"}
+      className={classes.text}
+    >
       <Typography variant="h2">{title}</Typography>
       <Typography variant={"body1"}>{content}</Typography>
     </Grid>
@@ -60,29 +65,24 @@ const Section = ({ title, content, image, textFirst }: SectionProps) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <Grid
+      direction={"row"}
+      container
+      className={classes.section}
+      justify={"space-around"}
+    >
       {textFirst ? (
-        <Grid
-          direction={"row"}
-          container
-          className={classes.section}
-          justify={"space-around"}
-        >
+        <React.Fragment>
           <SectionText title={title} content={content} />
           <SectionImage image={image} />
-        </Grid>
+        </React.Fragment>
       ) : (
-        <Grid
-          direction={"row"}
-          container
-          className={classes.section}
-          justify={"space-around"}
-        >
+        <React.Fragment>
           <SectionImage image={image} />
           <SectionText title={title} content={content} />
-        </Grid>
+        </React.Fragment>
       )}
-    </div>
+    </Grid>
   );
 };
 
