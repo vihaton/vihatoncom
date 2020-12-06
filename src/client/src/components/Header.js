@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Headroom from "react-headroom";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
 import vImg from "../assets/images/v-character.png";
 
 const useStyles = makeStyles((theme) => ({

@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    paddingBottom: "2vh",
+    marginBottom: "3vh",
   },
   image: {
     objectFit: "cover",

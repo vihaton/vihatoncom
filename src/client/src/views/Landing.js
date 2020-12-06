@@ -2,11 +2,14 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 import { LoremIpsum } from "react-lorem-ipsum";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
 
+import Section from "../components/templates/Section";
 import Header from "../components/Header";
 import StickyFooter from "../components/StickyFooter";
 import Greeting from "../components/Greeting";
+import { Divider } from "@material-ui/core";
+
+import exampleIMG from "../assets/images/v-character.png";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -24,7 +27,21 @@ const Landing = () => {
     <div className={classes.main}>
       <Header />
       <Greeting />
-      <Container className={classes.main} maxWidth="md">
+      <Container className={classes.main} maxWidth="lg">
+        <Section
+          title="Section 1"
+          content="And its content."
+          image={{ src: exampleIMG, alt: "alt" }}
+          textFirst={true}
+        />
+        <Divider />
+        <Section
+          title="Section 2"
+          content="And its content."
+          image={{ src: exampleIMG, alt: "alt" }}
+          textFirst={false}
+        />
+        <Divider />
         <LoremIpsum p={4} />
         <StickyFooter />
       </Container>
