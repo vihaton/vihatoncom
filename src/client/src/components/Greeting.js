@@ -12,12 +12,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     paddingBottom: "2vh",
     marginBottom: "3vh",
+    minHeight: "400px",
   },
   image: {
     objectFit: "cover",
     margin: "auto",
     width: "100%",
-    minHeight: "200px",
+    minHeight: "300px",
     maxHeight: "50vh",
   },
   greeting: {
@@ -48,28 +49,37 @@ const image = {
 };
 
 export default function Greeting() {
-  const [loaded, setLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
   const classes = useStyles();
 
+  const imgObject = (
+    <img
+      stlye={loading ? {} : { display: "none" }}
+      className={classes.image}
+      alt={image.title}
+      src={image.src}
+      onLoad={() => setLoading(false)}
+    />
+  );
+
   return (
-    <Fade bottom duration={1000} distance="1em">
-      <div className={classes.root}>
-        {loaded ? null : <Skeleton variant="rect" className={classes.image} />}
-        <img
-          className={classes.image}
-          alt={image.title}
-          src={image.src}
-          stlye={loaded ? {} : { display: "none" }}
-          onLoad={() => setLoaded(true)}
-        />
+    <div className={classes.root}>
+      {loading ? (
+        <Skeleton variant="rect" animation="wave" className={classes.image}>
+          {imgObject}
+        </Skeleton>
+      ) : (
+        imgObject
+      )}
+      <Fade bottom duration={1000} distance="10vh">
         <div className={classes.greeting}>
           <div className={classes.greetingText}>
             <h1> Vili Hätönen</h1>
             <h3>I speak. I code. I listen.</h3>
           </div>
         </div>
-        {/* <Button text="Contact me" href="#contact" /> */}
-      </div>
-    </Fade>
+      </Fade>
+      {/* <Button text="Contact me" href="#contact" /> */}
+    </div>
   );
 }
