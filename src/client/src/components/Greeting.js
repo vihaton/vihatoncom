@@ -1,8 +1,9 @@
-﻿import React from "react";
+﻿import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Fade } from "react-reveal";
 import glitterViliImg from "../assets/images/glitter-vili.jpg";
+import { Skeleton } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "cover",
     margin: "auto",
     width: "100%",
+    minHeight: "200px",
     maxHeight: "50vh",
   },
   greeting: {
@@ -46,12 +48,20 @@ const image = {
 };
 
 export default function Greeting() {
+  const [loaded, setLoaded] = useState(false);
   const classes = useStyles();
 
   return (
     <Fade bottom duration={1000} distance="1em">
       <div className={classes.root}>
-        <img className={classes.image} alt={image.title} src={image.src} />
+        {loaded ? null : <Skeleton variant="rect" className={classes.image} />}
+        <img
+          className={classes.image}
+          alt={image.title}
+          src={image.src}
+          stlye={loaded ? {} : { display: "none" }}
+          onLoad={() => setLoaded(true)}
+        />
         <div className={classes.greeting}>
           <div className={classes.greetingText}>
             <h1> Vili Hätönen</h1>
