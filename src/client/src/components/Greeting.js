@@ -78,7 +78,6 @@ export default function Greeting() {
           </div>
         </div>
       </Fade>
-      {/* <Button text="Contact me" href="#contact" /> */}
     </div>
   );
 }
