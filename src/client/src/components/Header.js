@@ -20,10 +20,16 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: theme.spacing(1),
-    marginLeft: theme.spacing(2),
-    textDecoration: "none",
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+    background: theme.palette.common.darkGrey,
+  },
+  link: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
     color: theme.palette.common.darkBlack,
+    textDecoration: "none",
   },
   logo: {
     maxWidth: "30px",
@@ -36,10 +42,12 @@ const Header = () => {
 
   return (
     <Headroom className={classes.root}>
-      <a href="" className={classes.main}>
-        <img src={vImg} className={classes.logo} />
-        <p>ihaton.com</p>
-      </a>
+      <div className={classes.main}>
+        <a href="" className={classes.link}>
+          <img src={vImg} className={classes.logo} />
+          <p>ihaton.com</p>
+        </a>
+      </div>
     </Headroom>
   );
 };

@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     // background: theme.palette.primary.light,
     padding: "1em 3em 1em 2em",
     minWidth: "25vw",
+    maxHeight: "50vh",
   },
 }));
 
