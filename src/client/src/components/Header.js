@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Headroom from "react-headroom";
 import { makeStyles } from "@material-ui/core/styles";
-import vImg from "../assets/images/v-character.png";
+// import vImg from "../assets/images/v-character.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +41,7 @@ const Header = () => {
     <Headroom className={classes.root}>
       <div className={classes.main}>
         <a href="" className={classes.link}>
-          <img src={vImg} className={classes.logo} />
+          <img src={process.env.PUBLIC_URL + "/img/v-character.png"} className={classes.logo} />
           <p>ihaton.com</p>
         </a>
       </div>

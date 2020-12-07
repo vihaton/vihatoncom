@@ -11,7 +11,8 @@ import { Fade } from "react-reveal";
 
 import { Divider } from "@material-ui/core";
 
-import exampleIMG from "../assets/images/v-character.png";
+// import exampleIMG from "../assets/images/v-character.png";
+import content from "../assets/text/content.en";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -20,35 +21,34 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     justifyContent: "space-between",
   },
+  divider: {
+    margin: theme.spacing(7, 0),
+  },
 }));
 
 const Landing = () => {
   const classes = useStyles();
 
+  console.log("section data", content.sections);
   return (
     <div className={classes.main}>
       <Header />
       <Greeting />
       <Container className={classes.main} maxWidth="lg">
-        <Fade left duration={1000}>
-          <Section
-            title="Section 1"
-            content="And its content."
-            image={{ src: exampleIMG, alt: "alt" }}
-            textFirst={true}
-          />
-        </Fade>
-        <Divider />
-        <Fade left duration={2000}>
-          <Section
-            title="Section 2"
-            content="And its content."
-            image={{ src: exampleIMG, alt: "alt" }}
-            textFirst={false}
-          />
-        </Fade>
-        <Divider />
-        <LoremIpsum p={4} />
+        {content.sections.map((section, index) => (
+          <React.Fragment key={index}>
+            <Fade left duration={1000}>
+              <Section
+                title={section.title}
+                content={section.content}
+                image={section.image}
+                textFirst={index % 2 === 0}
+              />
+            </Fade>
+            <Divider className={classes.divider} />
+          </React.Fragment>
+        ))}
+        {/* <LoremIpsum p={4} /> */}
         <StickyFooter />
       </Container>
     </div>

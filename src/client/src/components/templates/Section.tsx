@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "200px",
     maxWidth: "90vw",
     "@media (min-width:600px)": {
-      maxWidth: "50vw",
+      maxWidth: "600px",
     },
   },
   text: {
@@ -27,26 +27,28 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     minWidth: "200px",
+    margin: theme.spacing(5,0)
   },
 }));
 
 const SectionText = ({ title, content }: SectionTextProps) => {
   const classes = useStyles();
   return (
-    <Container
-      className={classes.text}
-      maxWidth="sm"
-    >
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant={"body1"}>{content}</Typography>
+    <Container className={classes.text} maxWidth="sm">
+      <Typography align="center" variant="h2">{title}</Typography>
+      <br/>
+      <Typography align="justify" variant={"body1"}>{content}</Typography>
     </Container>
   );
 };
 
 const SectionImage = ({ image }: SectionImageProps) => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
   const classes = useStyles();
 
+
+  console.log(image.src);
+  
   return (
     <Grid item>
       {loaded ? null : <Skeleton variant="rect" className={classes.image} />}
@@ -54,7 +56,7 @@ const SectionImage = ({ image }: SectionImageProps) => {
         style={loaded ? {} : { display: "none" }}
         className={classes.image}
         alt={image.alt}
-        src={image.src}
+        src={process.env.PUBLIC_URL + image.src}
         onLoad={() => setLoaded(true)}
       />
     </Grid>
@@ -63,6 +65,8 @@ const SectionImage = ({ image }: SectionImageProps) => {
 
 const Section = ({ title, content, image, textFirst }: SectionProps) => {
   const classes = useStyles();
+
+  console.log("image", image);
 
   return (
     <Grid

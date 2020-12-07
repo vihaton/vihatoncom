@@ -1,7 +1,7 @@
 ﻿import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "react-reveal";
-import glitterViliImg from "../assets/images/glitter-vili.jpg";
+// import glitterViliImg from "../assets/images/glitter-vili.jpg";
 import { Skeleton } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexDirection: "column",
     paddingBottom: "2vh",
-    marginBottom: "3vh",
+    marginBottom: theme.spacing(18),
     minHeight: "400px",
   },
   image: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 const image = {
   title: "Vili speaking into a microphone with glitter on his face.",
-  src: glitterViliImg,
+  src: "/img/glitter-vili.jpg",
 };
 
 export default function Greeting() {
@@ -55,7 +55,7 @@ export default function Greeting() {
       stlye={loading ? {} : { display: "none" }}
       className={classes.image}
       alt={image.title}
-      src={image.src}
+      src={process.env.PUBLIC_URL + image.src}
       onLoad={() => setLoading(false)}
     />
   );
