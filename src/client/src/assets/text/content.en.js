@@ -12,7 +12,7 @@ const content = {
     {
       title: "Data Scientist",
       content:
-        "I design and build artificial intelligence (AI) systems for living. I've done research on both theoretical and applied machine learning (ML), and I'm always open for new ideas and projects which utilize ML to benefit humans and other living creatures.",
+        "I design and build artificial intelligence (AI) systems for a living. I've done research on both theoretical and applied machine learning (ML), and I'm always open for new ideas and projects which utilize ML to benefit humans and other living creatures.",
       image: {
         src: "/img/limo.jpeg",
         alt:
