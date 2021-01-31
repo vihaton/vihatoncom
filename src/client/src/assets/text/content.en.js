@@ -3,7 +3,7 @@ const content = {
     {
       title: "Public Speaker",
       content:
-        "Good ideas get better when they are shared. A good talk is not only inspiring, but it also leads to action: in order to change the world we must find and amplify the good and just ideas and make them the part of tomorrow's reality. Sharing is necessity for a sustainable change, hence I'm passionate about public speaking.",
+        "Good ideas get better when they are shared. A good talk is not only inspiring, but it also leads to action. In order to change the world we must find and amplify the good ideas and make them the part of tomorrow's reality. Sharing is a necessity for a sustainable change, hence I'm passionate about public speaking.",
       image: {
         src: "/img/ttt-finaali-vili-screen.jpg",
         alt: "Vili on a stage",
@@ -12,7 +12,7 @@ const content = {
     {
       title: "Data Scientist",
       content:
-        "I design and build artificial intelligence (AI) systems for a living. I've done research on both theoretical and applied machine learning (ML), and I'm always open for new ideas and projects which utilize ML to benefit humans and other living creatures.",
+        "I design and build artificial intelligence systems for a living. I've done research on both theoretical and applied machine learning, and I'm always open for new ideas and projects which utilize ML to benefit humans and other living creatures.",
       image: {
         src: "/img/limo.jpeg",
         alt:
