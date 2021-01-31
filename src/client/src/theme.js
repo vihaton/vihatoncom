@@ -5,6 +5,7 @@ const orange = "#F4976C"; // orange
 const violetBlue = "#303C6C"; // violet blue
 const riverStone = "#B4DFE5"; // river stone
 const iceBlue = "#D2FDFF"; // ice blue
+const snow = "#fafafa"
 
 // colors
 const primary = orange;
@@ -12,7 +13,7 @@ const secondary = violetBlue;
 const black = "#343a40";
 const darkBlack = "rgb(36, 40, 44)";
 const darkGrey = "rgba(179,179,179,0.3)";
-const background = iceBlue;
+const background = snow;
 const warningLight = "rgba(253, 200, 69, .3)";
 const warningMain = "rgba(253, 200, 69, .5)";
 const warningDark = "rgba(253, 200, 69, .7)";
