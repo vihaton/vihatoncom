@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: theme.palette.common.darkBlack,
     textDecoration: "none",
+    margin: theme.spacing(0, 3),
   },
   logo: {
     maxWidth: "30px",
@@ -40,8 +41,11 @@ const Header = () => {
   return (
     <Headroom className={classes.root}>
       <div className={classes.main}>
-        <a href="" className={classes.link}>
-          <img src={process.env.PUBLIC_URL + "/img/v-character.png"} className={classes.logo} />
+        <a href="/" className={classes.link}>
+          <img
+            src={process.env.PUBLIC_URL + "/img/v-character.png"}
+            className={classes.logo}
+          />
           <p>ihaton.com</p>
         </a>
       </div>
