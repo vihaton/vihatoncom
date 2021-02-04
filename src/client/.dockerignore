@@ -1,5 +1,7 @@
-node_modules
-build
 .dockerignore
 Dockerfile
 Dockerfile.prod
+.next/
+node_modules/
+k8s/
+secrets/
