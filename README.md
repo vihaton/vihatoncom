@@ -2,35 +2,17 @@
 
 `vihaton.com` is my personal website built with React, TypeScript, Material-UI and powered with Docker.
 
-## TODO
-
-### Client
-- first working exmaple
-- dockerfile for prod
-- reconfigure nginx
-
-### Server 
-- init
-
 ## Dev notes
 
 ### Build local development image
 
-1. with docker build  
-
-```
-docker build -t vihatoncom:dev . 
-```
-
-2. with docker-compose  
-```
-docker-compose up -d --build
-
+```bash
+docker build -t vihatoncom:dev .
 ```
 
 ### Run the local image
 
-```
+```bash
 docker run \
     -it \
     --rm \
@@ -39,4 +21,20 @@ docker run \
     -p 3001:3000 \
     -e CHOKIDAR_USEPOLLING=true \
     vihatoncom:dev
+```
+
+### Build the production version
+
+```bash
+docker build -f Dockerfile.prod -t eu.gcr.io/vihaton/vihatoncom:X.Y.Z .
+```
+
+Push the image
+```bash
+gcloud docker -- push eu.gcr.io/vihaton/vihatoncom:X.Y.Z
+```
+
+Apply kubernetes configurations for the first time
+```bash
+kubectl apply [--namespace vihatoncom] -f k8s/base/
 ```
