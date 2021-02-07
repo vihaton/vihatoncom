@@ -18,7 +18,7 @@ docker run \
     --rm \
     -v ${PWD}:/src/client/node_modules \
     -v /app/node_modules \
-    -p 3001:3000 \
+    -p 3000:3000 \
     -e CHOKIDAR_USEPOLLING=true \
     vihatoncom:dev
 ```
@@ -38,3 +38,10 @@ Apply kubernetes configurations for the first time
 ```bash
 kubectl apply [--namespace vihatoncom] -f k8s/base/
 ```
+
+reserve an ip
+```bash
+gcloud compute addresses create vihatoncom-ip --global
+```
+replace `create` for `describe` to view the addresses
+
