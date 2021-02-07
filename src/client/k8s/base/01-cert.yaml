@@ -1,0 +1,10 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: vihatoncom-cert
+  namespace: vihatoncom
+spec:
+  domains:
+    - www.vilihatonen.com
+    - vilihatonen.com
+    - vihaton.com

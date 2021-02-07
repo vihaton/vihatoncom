@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: vihatoncom
+resources:
+  - 00-namespace.yaml
+  - 01-cert.yaml
+  - 10-service.yaml
+  - 11-deployment.yaml
