@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexDirection: "column",
     paddingBottom: "2vh",
-    marginBottom: theme.spacing(18),
+    marginBottom: theme.spacing(8),
     minHeight: "400px",
   },
   image: {

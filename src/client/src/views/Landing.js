@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   divider: {
-    margin: theme.spacing(7, 0),
+    margin: theme.spacing(12, 0),
   },
 }));
 

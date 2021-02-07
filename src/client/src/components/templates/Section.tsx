@@ -12,7 +12,7 @@ import { Skeleton } from "@material-ui/lab";
 const useStyles = makeStyles((theme) => ({
   section: {
     padding: theme.spacing(2),
-    margin: theme.spacing(12, 0, 8, 0),
+    margin: theme.spacing(3, 0),
   },
   image: {
     minHeight: "100px",
