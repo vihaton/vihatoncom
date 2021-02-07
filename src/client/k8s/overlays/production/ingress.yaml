@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: vihatoncom-ingress
+  namespace: vihatoncom
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: vihatoncom-ip
+    networking.gke.io/managed-certificates: vihatoncom-cert
+spec:
+  backend:
+    serviceName: vihatoncom-service
+    servicePort: 3000
