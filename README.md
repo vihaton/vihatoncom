@@ -1,6 +1,6 @@
 # Personal website
 
-`vihaton.com` is my personal website built with React, TypeScript, Material-UI and powered with Docker.
+`vihaton.com` is my personal website built with React, TypeScript, Material-UI and powered with Docker & K8s
 
 ## Dev notes
 
@@ -45,3 +45,30 @@ gcloud compute addresses create vihatoncom-ip --global
 ```
 replace `create` for `describe` to view the addresses
 
+# blog.vihaton.com
+
+The personal blog attached to the website. Self-hosted Ghost, put up with Helm, run on K8s.
+
+## Motivation
+
+If one has something to say it would be nice to do on your own terms, hence one needs a blog, preferably self-hosted (which means K8s hosted).
+
+## Dev notes
+
+After installing helm you need the bitnami repo
+
+`helm repo add bitnami https://charts.bitnami.com/bitnami`
+
+and you can do the first release right away 
+
+`helm install ghost-release bitnami/ghost` 
+
+Some security related further configurations might be needed. For that you need to upgrade the default installation with 
+
+```bash
+helm upgrade -f src/blog/helm/blog.yaml \
+    ghost-release bitnami/ghost \
+    --set ghostPassword=$GHOST_PASSWORD,mariadb.auth.rootPassword=$MARIADB_ROOT_PASSWORD,mariadb.auth.password=$MARIADB_PASSWORD,ghostHost=$APP_HOST
+```
+
+in order for the above spell to work you need to echo the secrets to your shell first.
