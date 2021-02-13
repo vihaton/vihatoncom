@@ -117,6 +117,10 @@ helm upgrade -f src/blog/helm/blog.yaml \
 
 in order for the above spell to work you need to echo the secrets to your shell first.
 
+> NOTE: if you, for any reason, need to _remove_ your ghost-release with `helm uninstall`, and you have already made changes or published content to the blog, then you can make a re-release by 
+> 1) setting the MariaDB passwords to be the same as the old ones (you need to save the pswds somewhere before the `helm uninstall` to be able to access your data again) and 
+> 2) tell ghost that there already exists a persistent volume claim with the `persistence.existingClaim` parameter in `helm/blog.yaml`.
+
 ### K8s
 
 #### Setup routing

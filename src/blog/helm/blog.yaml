@@ -1,4 +1,14 @@
 service:
   type: ClusterIP
+
 ghostProtocol: http
-ghostHost: 35.228.11.11 #blog.vihaton.com
+ghostHost: blog.vihaton.com
+#ghostHost: 35.228.11.11
+
+ghostUsername: "Vili Hätönen"
+ghostBlogTitle: "Vihaton's Blog"
+ghostEmail: vili.hato@gmail.com
+
+# if you are making a re-release after uninstalling a configured Ghost installation
+#persistence:
+#  existingClaim: data-ghost-release-mariadb-0
