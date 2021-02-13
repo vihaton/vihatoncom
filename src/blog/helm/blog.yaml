@@ -1,17 +1,4 @@
 service:
-  type: LoadBalancer
-
-  ## HTTP Port
-  ##
-  ports:
-    - name: http
-      port: 80
-      protocol: TCP
-      targetPort: http
-    - name: https
-      port: 443
-      protocol: TCP
-      targetPort: https
-
-ghostProtocol: https
-ghostHost: blog.vihaton.com
+  type: ClusterIP
+ghostProtocol: http
+ghostHost: 35.228.11.11 #blog.vihaton.com
