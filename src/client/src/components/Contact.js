@@ -8,14 +8,14 @@ import EmailIcon from "@material-ui/icons/Email";
 
 const Contact = () => {
   return (
-    <Grid container justify="center" maxWidth="lg" spacing={3}>
-      <Grid item xs={12}>
+    <Grid container justify="center" maxWidth="lg">
+      <Grid item xs={11} style={{ margin: "12px" }}>
         <Typography align="center" variant="h3">
           Contact
         </Typography>
       </Grid>
       <Grid item xs={3}>
-        <Grid container direction="row" justify="space-between" spacing={2}>
+        <Grid container direction="row" justify="center" spacing={6}>
           <Grid item>
             <Link
               align="center"

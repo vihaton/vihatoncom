@@ -16,7 +16,7 @@ spec:
         app: vihatoncom
     spec:
       containers:
-      - image: eu.gcr.io/vihaton/vihatoncom:0.1.3
+      - image: eu.gcr.io/vihaton/vihatoncom:0.1.4
         name: vihatoncom
         ports:
           - containerPort: 3000
