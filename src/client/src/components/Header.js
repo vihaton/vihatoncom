@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import Headroom from "react-headroom";
 import { makeStyles } from "@material-ui/core/styles";
-// import vImg from "../assets/images/v-character.png";
+import { Typography } from "@material-ui/core";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: theme.palette.common.darkBlack,
     textDecoration: "none",
+    padding: theme.spacing(1, 0),
     margin: theme.spacing(0, 3),
   },
   logo: {
@@ -41,13 +43,21 @@ const Header = () => {
   return (
     <Headroom className={classes.root}>
       <div className={classes.main}>
-        <a href="/" className={classes.link}>
+        <Link href="/" className={classes.link}>
           <img
             src={process.env.PUBLIC_URL + "/img/v-character.png"}
             className={classes.logo}
+            alt="v-char"
           />
-          <p>ihaton.com</p>
-        </a>
+          <Typography variant="body1">ihaton.com</Typography>
+        </Link>
+        <Link
+          href="https://blog.vihaton.com"
+          color="inherit"
+          className={classes.link}
+        >
+          <Typography variant="body1">Blog</Typography>
+        </Link>
       </div>
     </Headroom>
   );

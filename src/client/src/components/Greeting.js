@@ -1,7 +1,6 @@
 ﻿import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "react-reveal";
-// import glitterViliImg from "../assets/images/glitter-vili.jpg";
 import { Skeleton } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     width: "100%",
     minHeight: "300px",
-    maxHeight: "80vh", 
+    maxHeight: "80vh",
   },
   greeting: {
     position: "absolute",

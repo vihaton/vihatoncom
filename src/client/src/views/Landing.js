@@ -1,17 +1,15 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
-import { LoremIpsum } from "react-lorem-ipsum";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Section from "../components/templates/Section";
 import Header from "../components/Header";
 import StickyFooter from "../components/StickyFooter";
 import Greeting from "../components/Greeting";
+import Contact from "../components/Contact";
 import { Fade } from "react-reveal";
 
 import { Divider } from "@material-ui/core";
-
-// import exampleIMG from "../assets/images/v-character.png";
 import content from "../assets/text/content.en";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,22 +20,24 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   divider: {
-    margin: theme.spacing(12, 0),
+    margin: theme.spacing(10, 0),
   },
 }));
 
 const Landing = () => {
   const classes = useStyles();
 
-  console.log("section data", content.sections);
+  // console.log("section data", content.sections);
   return (
     <div className={classes.main}>
       <Header />
       <Greeting />
+      <Contact />
       <Container className={classes.main} maxWidth="lg">
         {content.sections.map((section, index) => (
           <React.Fragment key={index}>
             <Fade left duration={1000}>
+              <Divider className={classes.divider} />
               <Section
                 title={section.title}
                 content={section.content}
@@ -45,10 +45,8 @@ const Landing = () => {
                 textFirst={index % 2 === 0}
               />
             </Fade>
-            <Divider className={classes.divider} />
           </React.Fragment>
         ))}
-        {/* <LoremIpsum p={4} /> */}
         <StickyFooter />
       </Container>
     </div>

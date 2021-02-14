@@ -51,7 +51,7 @@ const SectionImage = ({ image }: SectionImageProps) => {
   const [loaded, setLoaded] = useState(true);
   const classes = useStyles();
 
-  console.log(image.src);
+  // console.log(image.src);
 
   return (
     <Grid item>
@@ -70,7 +70,7 @@ const SectionImage = ({ image }: SectionImageProps) => {
 const Section = ({ title, content, image, textFirst }: SectionProps) => {
   const classes = useStyles();
 
-  console.log("image", image);
+  // console.log("image", image);
 
   return (
     <Grid
