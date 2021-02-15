@@ -20,12 +20,23 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(3, 3),
     marginTop: theme.spacing(12),
     backgroundColor:
       theme.palette.type === "light"
         ? theme.palette.grey[200]
         : theme.palette.grey[800],
+  },
+  icon: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 21,
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: 28,
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: 34,
+    },
   },
 }));
 
@@ -35,28 +46,28 @@ export default function StickyFooter() {
   return (
     <footer className={classes.footer}>
       <Grid container direction="row" justify="space-between">
-        <Grid item xs={3}>
+        <Grid item xs={6}>
           <Typography variant="body1">Hate less, hateless, vihaton.</Typography>
           <Copyright />
         </Grid>
-        <Grid item xs={2}>
-          <Grid container spacing={1} flex-direction="row" justify="flex-end">
+        <Grid item xs={6}>
+          <Grid container spacing={2} flex-direction="row" justify="flex-end">
             <Grid item>
               <Link
                 color="inherit"
                 href="https://www.linkedin.com/in/vili-hatonen/"
               >
-                <LinkedInIcon style={{ fontSize: 33 }} />
+                <LinkedInIcon className={classes.icon} />
               </Link>
             </Grid>
             <Grid item>
               <Link color="inherit" href="mailto:vili.hato@gmail.com">
-                <EmailIcon style={{ fontSize: 33 }} />
+                <EmailIcon className={classes.icon} />
               </Link>
             </Grid>
             <Grid item>
               <Link color="inherit" href="https://twitter.com/vihaton">
-                <TwitterIcon style={{ fontSize: 33 }} />
+                <TwitterIcon className={classes.icon} />
               </Link>
             </Grid>
           </Grid>

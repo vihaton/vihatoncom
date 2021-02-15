@@ -5,7 +5,7 @@ const orange = "#F4976C"; // orange
 const violetBlue = "#303C6C"; // violet blue
 const riverStone = "#B4DFE5"; // river stone
 const iceBlue = "#D2FDFF"; // ice blue
-const snow = "#fafafa"
+const snow = "#fafafa";
 
 // colors
 const primary = orange;
@@ -37,9 +37,10 @@ const theme = createMuiTheme({
     primary: { main: primary },
     secondary: { main: secondary },
     common: {
-      black,
-      darkBlack,
-      darkGrey,
+      black: black,
+      darkBlack: darkBlack,
+      darkGrey: darkGrey,
+      iceBlue: iceBlue,
     },
     warning: {
       light: warningLight,

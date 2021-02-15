@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fade } from "react-reveal";
 import { Skeleton } from "@material-ui/lab";
@@ -10,11 +10,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     paddingBottom: "2vh",
     marginBottom: theme.spacing(8),
-    minHeight: "400px",
+    minHeight: "300px",
   },
   image: {
     objectFit: "cover",
     margin: "auto",
+    marginTop: 0,
     width: "100%",
     minHeight: "300px",
     maxHeight: "80vh",
