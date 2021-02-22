@@ -10,8 +10,6 @@ You want your cluster to serve pages only over ssl/tls (https), so you should ge
 
 https://cert-manager.io/docs/installation/kubernetes/
 
-
-
 ### Build local development image
 
 In the `client` directory
@@ -61,26 +59,30 @@ kubectl apply -f k8s/cert-manager.yaml
 
 #### Setup an ingress controller
 
-You need something to handle the routing of the requests aimed at your webpage. In K8s a good approach is to create an ingress controller, that handles all incoming traffic aimed at the webpages in your cluster. This way you can configure your DNS to direct everything to one ip-address and handle the routing within the cluster with the ingress controller and within your applications. 
+You need something to handle the routing of the requests aimed at your webpage. In K8s a good approach is to create an ingress controller, that handles all incoming traffic aimed at the webpages in your cluster. This way you can configure your DNS to direct everything to one ip-address and handle the routing within the cluster with the ingress controller and within your applications.
 
-By running 
+By running
+
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
 ```
-you create a new namespace and all services & deployments needed for your routing. 
+
+you create a new namespace and all services & deployments needed for your routing.
 
 **This approach needs one more fine tuning though.** The above configuration creates a deployment on _one_ of the nodes in your cluster. In the case that your cluster has more than one node, this means that the others remain without routing. You need to change the _deployment_ to be a _daemonset_. This ensures that the routing is available on all the nodes on your cluster.
 
 #### Setup the vihatoncom webpage
 
 Apply kubernetes configurations for the first time
+
 ```bash
 kubectl apply [--namespace vihatoncom] -f src/client/k8s/base/
 ```
 
 The above creates namespace, static ip, and deployment for the webpage living in `src/client/`.
 
-The last thing is to apply the production ingress: 
+The last thing is to apply the production ingress:
+
 ```bash
 kubectl apply -f src/client/k8s/overlays/production/ingress.yaml
 ```
@@ -105,9 +107,9 @@ After installing helm you need the bitnami repo
 
 and you can do the first release right away with couple additional parameters
 
-`helm install ghost-release -f src/blog/helm/blog.yaml bitnami/ghost` 
+`helm install ghost-release -f src/blog/helm/blog.yaml bitnami/ghost`
 
-To upgrade the default installation you can use 
+To upgrade the default installation you can use
 
 ```bash
 helm upgrade -f src/blog/helm/blog.yaml \
@@ -117,15 +119,16 @@ helm upgrade -f src/blog/helm/blog.yaml \
 
 in order for the above spell to work you need to echo the secrets to your shell first.
 
-> NOTE: if you, for any reason, need to _remove_ your ghost-release with `helm uninstall`, and you have already made changes or published content to the blog, then you can make a re-release by 
-> 1) setting the MariaDB passwords to be the same as the old ones (you need to save the pswds somewhere before the `helm uninstall` to be able to access your data again) and 
-> 2) tell ghost that there already exists a persistent volume claim with the `persistence.existingClaim` parameter in `helm/blog.yaml`.
+> NOTE: if you, for any reason, need to _remove_ your ghost-release with `helm uninstall`, and you have already made changes or published content to the blog, then you can make a re-release by
+>
+> 1. setting the MariaDB passwords to be the same as the old ones (you need to save the pswds somewhere before the `helm uninstall` to be able to access your data again) and
+> 2. tell ghost that there already exists a persistent volume claim with the `persistence.existingClaim` parameter in `helm/blog.yaml`.
 
 ### K8s
 
 #### Setup routing
 
-By using the ingress controller and cert manager already set up for the webpage we can simply create an ingress that specifies how the incoming requests aimed to blog should be handled. 
+By using the ingress controller and cert manager already set up for the webpage we can simply create an ingress that specifies how the incoming requests aimed to blog should be handled.
 
 ```bash
 kubectl apply -f src/blog/k8s/blog-ingress.yaml
