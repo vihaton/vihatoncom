@@ -1,16 +1,17 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Fade } from "react-reveal";
+import { Divider } from "@material-ui/core";
+
+import content from "../assets/text/content.en";
 
 import Section from "../components/templates/Section";
 import Header from "../components/Header";
 import StickyFooter from "../components/StickyFooter";
 import Greeting from "../components/Greeting";
 import Contact from "../components/Contact";
-import { Fade } from "react-reveal";
-
-import { Divider } from "@material-ui/core";
-import content from "../assets/text/content.en";
+import MediaCard from "../components/MediaCard";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -34,6 +35,7 @@ const Landing = () => {
       <Greeting />
       <Contact />
       <Container className={classes.main} maxWidth="lg">
+        <MediaCard />
         {content.sections.map((section, index) => (
           <React.Fragment key={index}>
             <Fade left duration={1000}>
